@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Buttons</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            flex-direction: column;
+        }
+        .container {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            width: 340px; /* Adjust width to fit the grid */
+            height: 340px; /* Adjust height to fit the grid */
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffb6c1; 
+            color: white;
+            border: none;
+            border-radius: 15px; 
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%; /* Fill the grid cell */
+            height: 100%; /* Fill the grid cell */
+        }
+        .button:hover {
+            background-color: #ff91a4; 
+        }
+        .forward { grid-row: 1 / 2; grid-column: 2 / 3; }
+        .left { grid-row: 2 / 3; grid-column: 1 / 2; }
+        .middle { grid-row: 2 / 3; grid-column: 2 / 3; }
+        .right { grid-row: 2 / 3; grid-column: 3 / 4; }
+        .backward { grid-row: 3 / 4; grid-column: 2 / 3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST" action="save_choice.php" class="forward">
+            <input type="hidden" name="choice" value="Forward">
+            <button type="submit" class="button">Forward</button>
+        </form>
+        <form method="POST" action="save_choice.php" class="left">
+            <input type="hidden" name="choice" value="Left">
+            <button type="submit" class="button">Left</button>
+        </form>
+        <form method="POST" action="save_choice.php" class="middle">
+            <input type="hidden" name="choice" value="Stop">
+            <button type="submit" class="button">Stop</button>
+        </form>
+        <form method="POST" action="save_choice.php" class="right">
+            <input type="hidden" name="choice" value="Right">
+            <button type="submit" class="button">Right</button>
+        </form>
+        <form method="POST" action="save_choice.php" class="backward">
+            <input type="hidden" name="choice" value="Backward">
+            <button type="submit" class="button">Backward</button>
+        </form>
+    </div>
+</body>
+</html>
+
